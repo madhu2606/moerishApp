@@ -1,0 +1,25 @@
+
+    <div class="main-element">
+        <div class="sec-one">
+            <div class="sec-one-one">
+                <img src="../../assets/login.svg" alt="login">
+            </div>
+            <h2 class="sec-one-head">Login</h2>
+            <p class="sec-one-para">Lorem ipsum dolor sit amet, consetetur</p>
+           
+            <div class="form-input">
+                <span class="errotext" *ngIf="isvalid">{{errortext}}</span>
+                 <form (ngSubmit)="Login()" class="pt-2"  [formGroup]="loginForm">
+
+                    <input type="text" name="username" formControlName="username" placeholder="Email/Mobile" id="user" class="form-control w-100">
+                    <input type="password" name="Password" formControlName="password" placeholder="Password" id="pwd" class="form-control w-100">
+                </form>
+            </div>
+        </div>
+        <div class="sec-two">
+            <div class="sec-two-button">
+                <button class="go" type="submit" (click)="Login()" form="form1" value="Submit">Go</button>
+            </div>
+            <p class="sec-two-fgt" [routerLink]="['/forget']" routerLinkActive="router-link-active" >Forgot Password?</p>
+        </div>
+    </div>

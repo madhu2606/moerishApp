@@ -1,0 +1,19 @@
+Generate Keystore 
+
+
+keytool -genkey -v -keystore moerish.keystore -alias moerish -keyalg RSA -keysize 2048 -validity 10000
+
+======================================================
+Build Commands
+
+npx cap add android
+npx cap add ios
+
+-------------------
+npx cap sync
+cd android
+./gradlew assembleRelease
+
+jarsigner -keystore ./moerish.keystore -storepass moerish app-release-unsigned.apk moerish && zipalign 4 app-release-unsigned.apk app-release.apk
+
+REF: https://stablekernel.com/article/creating-keystores-and-signing-android-apps/

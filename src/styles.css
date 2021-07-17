@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@font-face {
+	font-family: 'rubikregular';
+	src: url('./assets/fonts/rubik-regular-webfont.woff2') format('woff2'),
+	url('./assets/fonts/rubik-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+html, body {
+	font-family: 'rubikregular' !important;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+.main-element {
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+}
+@media screen and (min-width: 601px) {
+	.main-element {
+		height: auto !important;
+	}
+	.sec-one {
+		height: auto !important;
+	}
+	.sec-two {
+		height: auto !important;
+	}
+}

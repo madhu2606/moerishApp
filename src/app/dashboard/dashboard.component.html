@@ -1,0 +1,61 @@
+<div class="main-element">
+    <div class="sec_header">
+        <div class="main_header">
+            <div class="logo">
+                <img src="../../assets/logo.png" alt="logo">
+            </div>
+            <div class="moerish_head">
+                <h3 class="main-head">Hey, {{userDetails.name}}</h3>
+                <p class="sub-main-head">Find your favourite food at Moreish</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec_two">
+        <div class="all_items">
+            <p class="sort_by"><i class="fas fa-sort-amount-down"></i>Sort by</p>
+            <div class="single_item" *ngFor="let i of itemList">
+                <div class="item_img">
+                    <img src="../../assets/item1.png" alt="item1" width="100%">
+                    <p><i class="fa fa-minus-circle cr" aria-hidden="true"></i><span>1</span><i class="fa fa-plus-circle cr" aria-hidden="true"></i></p>
+                </div>
+                <div class="item_desc">
+                    <p class="region">{{i.category_name}}<span class="rating"><i class="fas fa-star star_icon"></i>4.6</span></p>
+                    <h3>{{i.item_name}}</h3>
+                   
+                    <p class="cost" *ngIf="i.item_discount =='0'"><span>{{i.item_cost |currency:'INR':'symbol':'1.0'}}</span></p>
+                    <p class="cost" *ngIf="i.item_discount !='0'"><span style="text-decoration: line-through;">{{i.item_cost |currency:'INR':'symbol':'1.0'}}</span>&nbsp;<span>{{i.item_cost - i.item_discount |currency:'INR':'symbol':'1.0'}}</span></p>
+
+                </div>
+            </div>
+            <hr/>
+            
+        </div>
+    </div>
+    <div class="filter_section" style="display: none;">
+		<div class="filter_panel">
+			<h3>Sort by</h3>
+			<div class="checkbox">
+			 	<label><input type="checkbox" value="Sweets" class="filter_check">Sweets</label>
+			</div>
+			<div class="checkbox">
+			 	<label><input type="checkbox" value="Dry fruits" class="filter_check">Dry fruits</label>
+			</div>
+			<div class="checkbox">
+			 	<label><input type="checkbox" value="Desserts" class="filter_check">Desserts</label>
+			</div>
+			<div class="checkbox">
+			 	<label><input type="checkbox" value="Indian" class="filter_check">Indian</label>
+			</div>
+			<div class="checkbox">
+			 	<label><input type="checkbox" value="Others" class="filter_check">Others</label>
+			</div>
+			<div class="save_sec">
+				<button class="save">Save</button>
+				<button class="cancel">Cancel</button>
+			</div>
+		</div>
+	</div>
+
+    <app-footer></app-footer>
+</div>

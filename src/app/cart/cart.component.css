@@ -1,0 +1,95 @@
+.sec_header {
+    height: 13vh;
+    padding: 26px 15px 15px 15px;
+}
+.sec_two {
+	height: 77vh;
+	padding: 15px;
+}
+.sec_footer {
+	height: 10vh;
+    padding: 10px 0px;
+    box-shadow: 0px 0px 16px rgb(0 147 233 / 12%);
+}
+h3.main-head {
+    margin: 0px;
+    font-size: 32px;
+    color: #C00037;
+    font-weight: 600;
+}
+p.sub-main-head {
+    margin-bottom: 0px;
+    color: #adadad;
+    font-size: 14px;
+    font-weight: 600;
+}
+.total {
+    background: #e4e2e2;
+    padding: 10px 20px;
+    font-size: 17px;
+    border-radius: 4px;
+}
+span.total_amount {
+    float: right;
+}
+button#checkout {
+    width: 100%;
+    margin: 18px 0px;
+    padding: 10px;
+    border: none;
+    background: #C00037;
+    border-radius: 4px;
+    color: #ffffff;
+}
+.footer-child {
+    width: 32.3333%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.footer-child img {
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+.footer-child p {
+    color: #969595;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.active_moerish img {
+    height: 24px;
+}
+.active_moerish p {
+    font-size: 12px;
+}
+.cart_moerish img {
+    height: 28px;
+}
+.cart_moerish p {
+    font-size: 12px;
+}
+.profile_moerish img {
+    height: 24px;
+}
+.profile_moerish p {
+    font-size: 12px;
+}
+.quantity span {
+    padding: 0px 5px;
+    vertical-align: bottom;
+    font-size: 14px;
+}
+.item_name, .item_price {
+    vertical-align: bottom !important;
+}
+@media screen and (min-width: 601px) {
+    .sec_header, .sec_two, .sec_footer {
+        height: auto !important;
+    }
+    .footer-child img{
+        width: auto;
+    }
+    img.active_img {
+        width: auto !important;
+    }
+}

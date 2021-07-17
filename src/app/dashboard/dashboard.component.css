@@ -1,0 +1,124 @@
+.sec_header {
+    height: 13vh;
+    padding: 26px 15px 15px 15px;
+}
+.sec_two {
+	height: 77vh;
+	padding: 15px;
+}
+
+.logo {
+    width: 18%;
+    display: inline-block;
+}
+.moerish_head {
+    width: 80%;
+    display: inline-block;
+    vertical-align: middle;
+}
+h3.main-head {
+    margin: 0px;
+    font-size: 24px;
+    color: #C00037;
+    font-weight: 600;
+}
+p.sub-main-head {
+    margin-bottom: 0px;
+    color: #7b7878;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.all_items {
+    padding: 10px 0px;
+    height: 100%;
+    z-index: 00000;
+    overflow-y: scroll;
+}
+.single_item {
+    margin: 15px 0px 5px 0px;
+    height: 120px;
+}
+.item_img {
+    width: 40%;
+    display: inline-block;
+}
+.item_desc {
+    margin-left: 3%;
+    width: 55%;
+    vertical-align: top;
+    display: inline-block;
+}
+.item_img p span {
+    font-size: 15px;
+    margin: 0px 8px;
+    font-weight: 600;
+    vertical-align: text-top;
+}
+.item_img p i {
+    color: #c10037;
+    font-size: 18px;
+    vertical-align: text-top;
+}
+.item_img p {
+    background: #e0e0e0;
+    margin: 0px auto;
+    width: fit-content;
+    border-radius: 2px;
+    padding: 2px 10px;
+    position: relative;
+    bottom: 15px;
+}
+p.region {
+    font-size: 12px;
+}
+.item_desc h3 {
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 600;
+}
+p.cost {
+    color: #c00d36;
+    margin: 15px 0px 0px 0px;
+    font-size: 16px;
+}
+p.cost span {
+    margin-left: 2px;
+}
+span.rating {
+    float: right;
+    font-size: 12px;
+    color: #f5cb00ed;
+}
+.star_icon {
+    padding-right: 5px;
+    font-size: 16px;
+}
+p.sort_by {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+p.sort_by i {
+    font-size: 18px;
+    margin-right: 8px;
+}
+hr {
+    margin: 0px;
+}
+
+
+@media screen and (min-width: 601px) {
+    .sec_header, .sec_two, .sec_footer {
+        height: auto !important;
+    }
+    .footer-child img{
+        width: auto;
+    }
+    img.active_img {
+        width: auto !important;
+    }
+    .item_img img {
+        height: 108px;
+    }
+}

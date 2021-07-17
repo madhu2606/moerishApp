@@ -1,0 +1,45 @@
+.sec_footer {
+	height: 10vh;
+    padding: 10px 0px;
+    box-shadow: 0px 0px 16px rgb(0 147 233 / 12%);
+}
+.footer-child {
+    width: 32.3333%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.footer-child img {
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+.footer-child p {
+    color: #969595;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.cart_moerish, .profile_moerish {
+    margin-top: 5px;
+}
+.cart_moerish img {
+    height: 24px;
+}
+.cart_moerish p {
+    font-size: 12px;
+}
+.active_moerish img {
+    height: 28px;
+}
+.active_moerish p {
+    font-size: 12px;
+}
+.profile_moerish img {
+    height: 24px;
+}
+.profile_moerish p {
+    font-size: 12px;
+}
+.router-link-active{
+    color: #c00037 !important;
+}
