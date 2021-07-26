@@ -1,0 +1,24 @@
+<div class="root-element">
+    <div class="sec-one-one">
+        <h2 class="sec-one-head  pt-2"><span class="sec-one-icon"><i class="fas fa-chevron-left" (click)="back()"></i></span><span class="sec-one-sub-head">Payment</span></h2>
+        <p class="sec-one-para">Delivery details</p>
+        <form action="#" method="post" id="form1">
+            <label class="form_label">Address</label>
+            <input type="text" name="address" id="addr" class="form-control">
+            <label class="form_label">Location</label>
+            <input type="text" name="location" id="loc" class="form-control">
+            <label class="form_label">Pin</label>
+            <input type="text" name="pincode" id="pin" class="form-control">
+            <label class="form_label_total">Total payable</label>
+            <p class="price-total">{{sum |currency:'INR':'symbol':'1.0'}}</p>
+            <hr/>
+            <label class="form_label_pay">Select payment type</label>
+            <div>
+                <button class="ctn-btn " [ngClass]="{'bt-active':(payCard == 'cash'?true:false) }" (click)="payCard = 'cash'"  >Cash</button>
+                <button class="ctn-btn" [ngClass]="{'bt-active':(payCard == 'card'?true:false) }"  value="card" (click)="payCard = 'card'" >Credit card/PayPal</button>					
+            </div>
+            <hr/>
+        </form>
+        <button class="proceed" type="submit" form="form1" value="Submit">Proceed</button>
+    </div>
+</div>

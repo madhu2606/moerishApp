@@ -1,0 +1,133 @@
+.sec_header {
+    height: 10vh;
+    padding: 26px 15px 15px 15px;
+}
+.sec_two {
+	height: 90vh;
+	padding: 0px 15px;
+}
+hr {
+    margin: 0px;
+}
+@media screen and (min-width: 601px) {
+    .sec_header, .sec_two {
+        height: auto !important;
+    }
+}
+.sec_header p {
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+p.region {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+h3.item_name {
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 600;
+}
+img.item_image {
+    margin: 12px 0px;
+}
+.orange_star {
+    color: #ffbc00;
+    padding: 0px 1px;
+}
+#rating {
+    color: #ffbc00;
+    font-size: 12px;
+    font-weight: 600;
+    padding-left: 6px;
+}
+span#cost {
+    float: right;
+    font-size: 18px;
+    color: #C00037;
+}
+.item_cost {
+    padding-right: 4px;
+}
+p.item_desc {
+    font-size: 12px;
+    margin-bottom: 0px;
+    line-height: 15px;
+    color: grey;
+    margin-top: 10px;
+}
+p.rating_desc {
+    font-size: 12px;
+    margin-bottom: 0px;
+    line-height: 15px;
+    color: grey;
+}
+button.add, button.quantity {
+    width: 100%;
+    border: none;
+    padding: 8px;
+    margin: 15px 0px;
+}
+button.add i, button.quantity i {
+    color: #c10037;
+    font-size: 18px;
+    vertical-align: text-top;
+}
+button.add span, button.quantity span {
+    font-size: 15px;
+    margin: 0px 8px;
+    font-weight: 600;
+    vertical-align: text-top;
+}
+.reviews {
+    margin: 10px 0px;
+}
+p.rating_stars {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+p.related_stars {
+    color: #ffbc00;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0px 5px 0px;
+}
+p.read_more {
+    margin: 20px 0px;
+    color: #c10037;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 600;
+}
+h3.related_head {
+    font-size: 22px;
+    color: #C00037;
+    font-weight: 600;
+}
+.box1 {
+    width: 46%;
+    display: inline-block;
+    margin-right: 3%;
+    vertical-align: text-top;
+}
+.item_boxes {
+    margin: 10px 0px 20px 0px;
+}
+.box1 h3 {
+    margin: 0px 0px 20px 0px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.carousel-indicators{
+	bottom: unset;
+}
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+.idle.active {
+background: #C00037!important;
+  }

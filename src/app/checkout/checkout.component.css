@@ -1,0 +1,82 @@
+.sec-one-one {
+    width: 90%;
+    margin: 0px auto;
+}
+.sec-one-head {
+	font-size: 30px;
+}
+.sec-one-icon {
+    color: #000000;
+    font-size: 22px;
+    margin-right: 15px;
+}
+.sec-one-sub-head {
+	color: #C00037;
+	font-weight: 600;
+}
+.sec-one-para {
+	color: #8C8C8C;
+	font-size: 15px;
+	margin: 20px 0px 5px 0px;
+}
+.form_label {
+    color: #8C8C8C;
+    font-weight: 500;
+    font-size: 13px;
+}
+#addr, #loc, #pin {
+    border-radius: unset;
+    margin-bottom: 11px;
+    border: 1px solid #707070;
+}
+#pin {
+	width: 50%;
+}
+.form_label_total {
+	margin-top: 20px;
+	color: #8C8C8C;
+    font-weight: 500;
+    font-size: 15px;
+}
+.form_label_pay {
+	color: #8C8C8C;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 5px 0px 10px 0px;
+}
+.price-total {
+	color: #393943;
+    font-size: 27px;
+    font-weight: 600;
+}
+.ctn-btn {
+    background-color: #EFEFEF;
+    border: unset;
+    height: 41px;
+    color: #393943;
+    font-weight: 600;
+    padding: 0px 20px;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+.proceed {
+    background: #C00037;
+    border: unset;
+    width: 100%;
+    height: 45px;
+    color: #FFFFFF;
+    font-size: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.bt-active {
+    background: url(../../assets/ok-sign.svg);
+    background-repeat: no-repeat;
+    background-color: #EFEFEF;
+    background-position-x: right;
+}
+@media screen and (min-width: 601px) {
+    button.proceed {
+        margin-bottom: 25px;
+    }
+}

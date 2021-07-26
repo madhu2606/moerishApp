@@ -6,6 +6,7 @@ import { LoginService } from '../services/login.service';
 
 import 'rxjs/add/operator/map';
 declare const gapi: any;
+declare var $: any;
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,20 @@ export class LoginComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    
+    $(document).ready(function(){
+			var _originalSize = $(window).width() + $(window).height()
+      console.log(_originalSize)
+			$(window).resize(function(){
+          // console.log($(document).width() + $(document).height())
+				if($(document).width() + $(document).height() == _originalSize){
+					$(".sec-two").css("position","absolute"); 
+				} else if($(document).width() + $(document).height() != _originalSize){
+					$(".sec-two").css("position","relative");  
+				} else{
+					$(".sec-two").css("position","absolute");  
+				}
+			});
+		});
   }
 
   loginForm = new FormGroup({

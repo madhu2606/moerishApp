@@ -1,57 +1,60 @@
 <div class="main-element">
-    <div class="sec_header">
-        <h3 class="main-head">Cart</h3>
-        <p class="sub-main-head">Selected Items</p>
+  <div class="sec_header">
+    <h3 class="main-head">Cart</h3>
+    <p class="sub-main-head">Selected Items</p>
+  </div>
+  <div class="sec_two">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of cartItems">
+          <td class="item_name">{{i.item.item_name}}</td>
+          <td class="quantity">
+            <img (click)="addCart(i.item_id,'minus')" src="../../assets/minus.jpeg" alt="minus" /><span>{{i.quantity}}</span
+            ><img (click)="addCart(i.item_id,'add')" src="../../assets/plus.jpeg" alt="plus" />
+          </td>
+          <td class="item_price"><i class="fas fa-rupee-sign"></i> {{i.quantity *(i.item.item_cost -i.item.item_discount) }}</td>
+        </tr>
+      
+      </tbody>
+    </table>
+    <div class="total">
+      <span class="total_text">Total</span
+      ><span class="total_amount"><i class="fas fa-rupee-sign"></i> {{sum}}</span>
     </div>
-    <div class="sec_two">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Qty</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="item_name">Chicken Biryani</td>
-                    <td class="quantity"><img src="../../assets/minus.jpeg" alt="minus"/><span>1</span><img src="../../assets/plus.jpeg" alt="plus"/></td>
-                    <td class="item_price"><i class="fas fa-rupee-sign"></i> 60</td>
-                </tr>
-                <tr>
-                    <td class="item_name">Paneer</td>
-                    <td class="quantity"><img src="../../assets/minus.jpeg" alt="minus"/><span>2</span><img src="../../assets/plus.jpeg" alt="plus"/></td>
-                    <td class="item_price"><i class="fas fa-rupee-sign"></i> 50</td>
-                </tr>
-                <tr>
-                    <td class="item_name">Chicken Dum Biryani</td>
-                    <td class="quantity"><img src="../../assets/minus.jpeg" alt="minus"/><span>3</span><img src="../../assets/plus.jpeg" alt="plus"/></td>
-                    <td class="item_price"><i class="fas fa-rupee-sign"></i> 40</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="total">
-            <span class="total_text">Total</span><span class="total_amount"><i class="fas fa-rupee-sign"></i> 60</span>
-        </div>
-        <div>
-            <button id="checkout">Checkout</button>
-        </div>
+    <div>
+      <button id="checkout" (click)="check()">Checkout</button>
     </div>
-    <app-footer></app-footer>
-    <!-- <div class="sec_footer">
-        <div class="footer_main">
-            <div class="footer-child active_moerish">
-                <img src="../../assets/dmore.png" alt="morish"/>
-                <p>Home</p>
-            </div>
-            <div class="footer-child cart_moerish">
-                <img src="../../assets/acart.png" alt="cart" class="active_img" />
-                <p>Cart</p>
-            </div>
-            <div class="footer-child profile_moerish">
-                <img src="../../assets/profile.png" alt="profile"/>
-                <p>Profile</p>
-            </div>
-        </div>
-    </div> -->
+  </div>
+  <!-- <app-footer></app-footer> -->
+  <div class="sec_footer">
+    <div class="footer_main">
+      <div
+        class="footer-child active_moerish"
+        [routerLink]="['/dashboard']"
+        routerLinkActive="router-link-active"
+      >
+        <img src="../../assets/dmore.png" alt="morish" />
+        <p>Home</p>
+      </div>
+      <div
+        class="footer-child cart_moerish"
+        [routerLink]="['/cart']"
+        routerLinkActive="router-link-active"
+      >
+        <img src="../../assets/acart.png" alt="cart" class="active_img" />
+        <p>Cart</p>
+      </div>
+      <div [routerLink]="['/profile']" routerLinkActive="router-link-active"  class="footer-child profile_moerish">
+        <img src="../../assets/profile.png" alt="profile" />
+        <p>Profile</p>
+      </div>
+    </div>
+  </div>
 </div>

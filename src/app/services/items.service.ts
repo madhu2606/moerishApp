@@ -40,4 +40,15 @@ export class ItemsService {
       
     });
   }
+  getReviews(id){
+   let body={
+    item_id : id
+   }
+    return this.http.post(environment.url.getReviews,body,this.requestOptions).map(
+      res=>{
+      console.log(res)
+      return res
+      
+    });
+  }
 }

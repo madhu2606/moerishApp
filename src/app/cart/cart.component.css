@@ -5,6 +5,7 @@
 .sec_two {
 	height: 77vh;
 	padding: 15px;
+    overflow: auto;
 }
 .sec_footer {
 	height: 10vh;

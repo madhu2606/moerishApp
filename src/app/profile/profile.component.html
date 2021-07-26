@@ -1,0 +1,41 @@
+<div class="main-element">
+    <div class="sec_header">
+        <div class="main_header">
+            <h3 class="main-head"><i (click)="back()" class="fas fa-chevron-left back_arrow"></i>Profile</h3>
+            <div class="profile">
+                <div class="logo">
+                    <img src="../../assets/boy.png" alt="profile" width="100%">
+                </div>
+                <div class="name_details">
+                    <p>Hello</p>
+                    <h3>{{userDetails.name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec_two">
+      
+        <div class="form-group">
+              <label for="usr">Email Address</label>
+              <input type="email" class="form-control" [value]="userDetails.email" id="email">
+        </div>
+        <div class="form-group">
+              <label for="usr">Phone</label>
+              <input type="text" class="form-control" [value]="userDetails.mobile" id="phone">
+        </div>
+        <div class="form-group">
+              <label for="usr">Address</label>
+              <input type="text" class="form-control" id="address">
+        </div>
+        <div class="form-group">
+              <label for="usr">City</label>
+              <input type="text" class="form-control" id="city">
+        </div>
+        <div class="form-group">
+              <label for="usr">State</label>
+              <input type="text" class="form-control" id="state">
+        </div>
+        <button id="save">Save</button>
+    </div>
+</div>

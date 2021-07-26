@@ -5,6 +5,7 @@
 .sec_two {
 	height: 77vh;
 	padding: 15px;
+    /* overflow: auto; */
 }
 
 .logo {
@@ -121,4 +122,58 @@ hr {
     .item_img img {
         height: 108px;
     }
+}
+
+
+
+.filter_panel {
+    width: 90%;
+    margin: 40px auto;
+}
+.filter_panel h3 {
+    font-size: 24px;
+    color: #C00037;
+    font-weight: 600;
+}
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+    margin-left: -25px !important;
+}
+.checkbox label {
+    font-size: 17px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+input.filter_check {
+    transform: scale(1.4);
+}
+.checkbox, .radio {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+.save_sec {
+    margin: 40px 0px 0px 0px;
+}
+.filter_section {
+    position: fixed;
+    bottom: 10%;
+    background: #ffffff;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+button.save {
+    width: 100%;
+    border: none;
+    background: #c00d36;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+button.cancel {
+    width: 100%;
+    border: none;
+    background: none;
+    color: #c00d36;
+    font-weight: 600;
 }

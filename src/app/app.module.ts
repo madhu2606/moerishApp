@@ -13,6 +13,9 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DescriptionComponent } from './description/description.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { CartComponent } from './cart/cart.component';
     ForgotpasswordComponent,
     DashboardComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    ProfileComponent,
+    DescriptionComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

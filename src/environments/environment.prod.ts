@@ -8,7 +8,8 @@ export const environment = {
     "updatePass":'',
     "checkuser":"",
     "profile":"",
-    "gsign":""
+    "gsign":"",
+    "getReviews":"http://billing.volksphantom.com:3010/v1.0/items/get-item-review"
    
   }
 };

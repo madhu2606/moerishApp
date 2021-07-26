@@ -1,4 +1,4 @@
-<div class="main-element">
+<div class="main-element" *ngIf="!loadChild">
     <div class="sec_header">
         <div class="main_header">
             <div class="logo">
@@ -12,14 +12,14 @@
     </div>
 
     <div class="sec_two">
+        <p class="sort_by" (click)="sortView = !sortView"><i class="fas fa-sort-amount-down"></i>Sort by</p>
         <div class="all_items">
-            <p class="sort_by"><i class="fas fa-sort-amount-down"></i>Sort by</p>
             <div class="single_item" *ngFor="let i of itemList">
                 <div class="item_img">
                     <img src="../../assets/item1.png" alt="item1" width="100%">
-                    <p><i class="fa fa-minus-circle cr" aria-hidden="true"></i><span>1</span><i class="fa fa-plus-circle cr" aria-hidden="true"></i></p>
+                    <p><i (click)="addCart(i.item_id,'minus')" class="fa fa-minus-circle cr" aria-hidden="true"></i><span>{{i.addQuant}}</span><i (click)="addCart(i.item_id,'add')" class="fa fa-plus-circle cr" aria-hidden="true"></i></p>
                 </div>
-                <div class="item_desc">
+                <div class="item_desc" (click)="loadDesc(i)">
                     <p class="region">{{i.category_name}}<span class="rating"><i class="fas fa-star star_icon"></i>4.6</span></p>
                     <h3>{{i.item_name}}</h3>
                    
@@ -32,30 +32,37 @@
             
         </div>
     </div>
-    <div class="filter_section" style="display: none;">
+    <div class="filter_section" *ngIf="sortView">
 		<div class="filter_panel">
 			<h3>Sort by</h3>
-			<div class="checkbox">
-			 	<label><input type="checkbox" value="Sweets" class="filter_check">Sweets</label>
+			<div class="checkbox form-check" *ngFor="let i of All_cat">
+              
+                  
+			 	<label class="form-check-label"><input (change)='checkChange(i.id,!i.isChecked)' type="checkbox" [value]="i.id" [checked] = "i.isChecked" class="filter_check form-check-input" >{{i.category_name}}</label>
 			</div>
-			<div class="checkbox">
-			 	<label><input type="checkbox" value="Dry fruits" class="filter_check">Dry fruits</label>
+			<!-- <div class="checkbox form-check">
+			 	<label class="form-check-label"><input type="checkbox" value="Dry fruits" class="filter_check form-check-input">Dry fruits</label>
 			</div>
-			<div class="checkbox">
-			 	<label><input type="checkbox" value="Desserts" class="filter_check">Desserts</label>
+			<div class="checkbox form-check">
+			 	<label class="form-check-label"><input type="checkbox" value="Desserts" class="filter_check form-check-input">Desserts</label>
 			</div>
-			<div class="checkbox">
-			 	<label><input type="checkbox" value="Indian" class="filter_check">Indian</label>
+			<div class="checkbox form-check">
+			 	<label class="form-check-label"><input type="checkbox" value="Indian" class="filter_check form-check-input">Indian</label>
 			</div>
-			<div class="checkbox">
-			 	<label><input type="checkbox" value="Others" class="filter_check">Others</label>
-			</div>
+			<div class="checkbox form-check">
+			 	<label class="form-check-label"><input type="checkbox" value="Others" class="filter_check form-check-input">Others</label>
+			</div> -->
 			<div class="save_sec">
-				<button class="save">Save</button>
-				<button class="cancel">Cancel</button>
+				<button class="save" (click) = 'ChnageFilter()'>Save</button>
+				<button class="cancel" (click)= "sortView = !sortView">Cancel</button>
 			</div>
 		</div>
 	</div>
+    <br>
 
     <app-footer></app-footer>
+</div>
+
+<div class="main-element" *ngIf="loadChild">
+    <app-description [data]  =childData  (messageEvent)="receiveMessage($event)" (addEvent) = "addCrt($event)"></app-description>
 </div>

@@ -1,0 +1,68 @@
+<div class="main-element">
+    <div class="sec_header">
+        <p><i (click)="back()" class="fas fa-chevron-left"></i></p>
+    </div>
+
+    <div class="sec_two">
+        <p class="region">{{data.category_name}}</p>
+        <h3 class="item_name">{{data.item_name}}</h3>
+    
+        <img src="../../assets/description.png" alt="item_img" width="100%" class="item_image">
+        <p><i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star"></i><span id="rating">4.6</span>
+            <span id="cost" *ngIf="data.item_discount =='0'">{{data.item_cost |currency:'INR':'symbol':'1.0'}}</span>
+            <span id="cost" *ngIf="data.item_discount !='0'">
+                <span style="text-decoration: line-through;">{{data.item_cost |currency:'INR':'symbol':'1.0'}}</span>&nbsp;<span>{{data.item_cost - data.item_discount |currency:'INR':'symbol':'1.0'}}</span>
+        </span>
+        <h3 class="item_name">{{data.item_name}}</h3>
+        <p class="item_desc">{{data.item_description}}</p>
+        <!-- <button class="add"><i class="fa fa-plus-circle cr" aria-hidden="true"></i><span>Add</span></button> -->
+        <button class="quantity"><i (click)="addCart(data.item_id,'minus')" class="fa fa-minus-circle cr" aria-hidden="true"></i><span>{{data.addQuant}}</span><i (click)="addCart(data.item_id,'add')" class="fa fa-plus-circle cr" aria-hidden="true"></i></button>
+        <div class="reviews">
+            <h3 class="item_name">Reviews</h3>
+            <div class="rating_stars pt-2" *ngFor="let j of ReviewList">
+                <span *ngFor="let in of counter(j.rating) ;let i = index">
+                    <i  class="fas fa-star orange_star" ></i>
+                </span>
+             
+                <span id="rating">{{j.rating}}</span>
+                <p class="rating_desc">{{j.review}}</p>
+            </div>
+           
+
+           
+            <!-- <p class="read_more">Read more reviews</p> -->
+        </div>
+        <div class="related_food_items">
+            <h3 class="related_head">Related food items</h3>
+            <div id="myCarousel21" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item " [ngClass]="{active:k==1 }"  *ngFor="let i of itemList;let k=index">
+                        <div class="item_boxes" *ngIf="k<itemList.length" >
+                            <div class="box1 ">
+                                <img src="../../assets/item1.png" alt="item1" width="100%">
+                                <p class="related_stars">
+                                    <i class="fas fa-star orange_star"></i>
+                                    <span id="rating">4.6</span> 
+                                    <span id="cost" *ngIf="i.item_discount =='0'"><span>{{itemList[k].item_cost |currency:'INR':'symbol':'1.0'}}</span></span>
+                                <span id="cost" *ngIf="itemList[k].item_discount !='0'"><span style="text-decoration: line-through;">{{itemList[k].item_cost |currency:'INR':'symbol':'1.0'}}</span>&nbsp;<span>{{itemList[k].item_cost - itemList[k].item_discount |currency:'INR':'symbol':'1.0'}}</span></span></p>
+                                <h3>{{itemList[k].item_name}}</h3>
+                            </div>
+                           
+                           
+                           
+                        </div>
+                    </div>
+                   
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel21" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#myCarousel21" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+            </div>
+        </div>
+    </div>
+</div>
