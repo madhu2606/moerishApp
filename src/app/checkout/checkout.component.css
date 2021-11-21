@@ -55,7 +55,7 @@
     height: 41px;
     color: #393943;
     font-weight: 600;
-    padding: 0px 20px;
+    /* padding: 0px 20px; */
     margin-right: 15px;
     border-radius: 4px;
 }
@@ -74,6 +74,26 @@
     background-repeat: no-repeat;
     background-color: #EFEFEF;
     background-position-x: right;
+}
+.address_box {
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 6px 0px;
+    width: 90%;
+    display: inline-block;
+}
+.address_check {
+    width: 8%;
+    display: inline-block;
+}
+p.get_current_loc {
+    color: #c00037;
+    font-weight: 600;
+    border-radius: 4px;
+    text-align: center;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    border: 1px solid #c00037;
 }
 @media screen and (min-width: 601px) {
     button.proceed {

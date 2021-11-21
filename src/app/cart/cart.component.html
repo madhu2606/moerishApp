@@ -16,8 +16,21 @@
         <tr *ngFor="let i of cartItems">
           <td class="item_name">{{i.item.item_name}}</td>
           <td class="quantity">
-            <img (click)="addCart(i.item_id,'minus')" src="../../assets/minus.jpeg" alt="minus" /><span>{{i.quantity}}</span
-            ><img (click)="addCart(i.item_id,'add')" src="../../assets/plus.jpeg" alt="plus" />
+            <i
+            (click)="addCart(i.item_id, 'minus')"
+            class="fa fa-minus-circle cr"
+            aria-hidden="true"
+          ></i
+          >
+            <!-- <img (click)="addCart(i.item_id,'minus')" src="../../assets/minus.jpeg" alt="minus" /> -->
+            <span>{{i.quantity}}</span
+            >
+            <i
+              (click)="addCart(i.item_id, 'add')"
+              class="fa fa-plus-circle cr"
+              aria-hidden="true"
+            ></i>
+            <!-- <img (click)="addCart(i.item_id,'add')" src="../../assets/plus.jpeg" alt="plus" /> -->
           </td>
           <td class="item_price"><i class="fas fa-rupee-sign"></i> {{i.quantity *(i.item.item_cost -i.item.item_discount) }}</td>
         </tr>
@@ -48,12 +61,12 @@
         [routerLink]="['/cart']"
         routerLinkActive="router-link-active"
       >
-        <img src="../../assets/acart.png" alt="cart" class="active_img" />
+        <img src="../../assets/acart.png" alt="cart" class="active_img" /><span *ngIf="cartcount > 0" class="cart_counter">{{cartcount}}</span>
         <p>Cart</p>
       </div>
-      <div [routerLink]="['/profile']" routerLinkActive="router-link-active"  class="footer-child profile_moerish">
+      <div [routerLink]="['/setting']" routerLinkActive="router-link-active"  class="footer-child profile_moerish">
         <img src="../../assets/profile.png" alt="profile" />
-        <p>Profile</p>
+        <p>Settings</p>
       </div>
     </div>
   </div>

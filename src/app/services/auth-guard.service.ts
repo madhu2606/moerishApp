@@ -18,7 +18,7 @@ export class AuthGuardService {
     this.token = localStorage.getItem('token');
     this.decoded= this.helper.decodeToken(this.token);
     console.log(this.helper.isTokenExpired(this.token))
-    if(this.helper.isTokenExpired(this.token) == false && this.decoded['data']['role'] == 'user') return true
+    if(this.helper.isTokenExpired(this.token) == false ) return true
     this.router.navigate(['/']);
     // ,{queryParams:{returnUrl :state.url}});
     return false;

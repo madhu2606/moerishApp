@@ -7,8 +7,13 @@
         <p class="region">{{data.category_name}}</p>
         <h3 class="item_name">{{data.item_name}}</h3>
     
-        <img src="../../assets/description.png" alt="item_img" width="100%" class="item_image">
-        <p><i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star"></i><span id="rating">4.6</span>
+        <img src="{{imageUrl}}/{{data.item_mob_largeimg}}"   alt="item_img" width="100%" class="item_image">
+        <p>
+          <span *ngFor="let in of counter(avgR) ;let i = index">
+            <i  class="fas fa-star orange_star" ></i>
+        </span>
+          <!-- <i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star orange_star"></i><i class="fas fa-star"></i> -->
+          <span id="rating" *ngIf="avgR >=0">{{avgR}}</span>
             <span id="cost" *ngIf="data.item_discount =='0'">{{data.item_cost |currency:'INR':'symbol':'1.0'}}</span>
             <span id="cost" *ngIf="data.item_discount !='0'">
                 <span style="text-decoration: line-through;">{{data.item_cost |currency:'INR':'symbol':'1.0'}}</span>&nbsp;<span>{{data.item_cost - data.item_discount |currency:'INR':'symbol':'1.0'}}</span>
@@ -18,12 +23,17 @@
         <!-- <button class="add"><i class="fa fa-plus-circle cr" aria-hidden="true"></i><span>Add</span></button> -->
         <button class="quantity"><i (click)="addCart(data.item_id,'minus')" class="fa fa-minus-circle cr" aria-hidden="true"></i><span>{{data.addQuant}}</span><i (click)="addCart(data.item_id,'add')" class="fa fa-plus-circle cr" aria-hidden="true"></i></button>
         <div class="reviews">
-            <h3 class="item_name">Reviews</h3>
+          <div class="reviews d-flex">
+            <h3 class="item_name"  >Reviews</h3>
+            <i class="fa fa-pencil float-right fa-pull-right" data-toggle="modal" data-target="#form"></i>
+          </div>
+           
             <div class="rating_stars pt-2" *ngFor="let j of ReviewList">
+              <span class="rating_desc">{{j.review_name}}</span> &nbsp;&nbsp;
                 <span *ngFor="let in of counter(j.rating) ;let i = index">
                     <i  class="fas fa-star orange_star" ></i>
                 </span>
-             
+               
                 <span id="rating">{{j.rating}}</span>
                 <p class="rating_desc">{{j.review}}</p>
             </div>
@@ -39,7 +49,7 @@
                     <div class="carousel-item " [ngClass]="{active:k==1 }"  *ngFor="let i of itemList;let k=index">
                         <div class="item_boxes" *ngIf="k<itemList.length" >
                             <div class="box1 ">
-                                <img src="../../assets/item1.png" alt="item1" width="100%">
+                                <img src="{{imageUrl}}/{{itemList[k].item_mob_smallimg}}" alt="item1" width="100%">
                                 <p class="related_stars">
                                     <i class="fas fa-star orange_star"></i>
                                     <span id="rating">4.6</span> 
@@ -62,6 +72,74 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sec_footer">
+    <div class="footer_main">
+      <div
+        class="footer-child active_moerish"
+        [routerLink]="['/dashboard']"
+        routerLinkActive="router-link-active"
+      >
+        <img
+         (click)="back()"
+          routerLinkActive="router-link-active"
+          src="../../assets/mini_logo.png"
+          alt="morish"
+        />
+        <p (click)="back()" routerLinkActive="router-link-active">
+          Home
+        </p>
+      </div>
+      <div
+        class="footer-child cart_moerish"
+        [routerLink]="['/cart']"
+        routerLinkActive="router-link-active"
+      >
+        <img
+          src="../../assets/gcart.png"
+          alt="cart"
+          [routerLink]="['/cart']"
+          routerLinkActive="router-link-active"
+        /><span *ngIf="cartcount > 0" class="cart_counter">{{
+          cartcount
+        }}</span>
+        <p [routerLink]="['/cart']" routerLinkActive="router-link-active">
+          Cart
+        </p>
+      </div>
+      <div
+        class="footer-child profile_moerish"
+        [routerLink]="['/setting']"
+        routerLinkActive="router-link-active"
+      >
+        <img
+          [routerLink]="['/setting']"
+          routerLinkActive="router-link-active"
+          src="../../assets/profile.png"
+          alt="profile"
+        />
+        <p [routerLink]="['/setting']" routerLinkActive="router-link-active">
+          Settings
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="text-right cross" data-dismiss="modal" > <i class="fa fa-times mr-2"></i> </div>
+            <div class="card-body text-center"> 
+                <div class="comment-box text-center">
+                    <h4>Add a Review</h4>
+                    <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+                    <div class="comment-area"> <textarea class="form-control comment" placeholder="what is your view?" rows="4"></textarea> </div>
+                    <div class="text-center mt-4"> <button class="btn btn-success send px-5" (click)="addReview()">Submit </button> </div>
+                </div>
             </div>
         </div>
     </div>

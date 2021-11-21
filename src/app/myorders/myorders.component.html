@@ -1,0 +1,35 @@
+<div class="main-element">
+    <div class="sec_header">
+        <div class="main_header">
+            <h3 class="main-head"><i  [routerLink]="['/dashboard']"
+                routerLinkActive="router-link-active" class="fas fa-chevron-left back_arrow"></i>Your Orders</h3>
+        </div>
+    </div>
+
+    <div class="sec_two">
+        <div *ngIf="orders.length == 0" class="text-center">No order found</div>
+        <div class="order_card" *ngFor="let order of orders" (click)="trackOrder(order.order_no)">
+            <div class="head_part">
+                <div class="part1">
+                    <!-- <h3>Venkatesh Grand</h3> -->
+                    <h3>{{order.order_no}}</h3>
+                </div>
+                <div class="part2">{{order.amount |currency:'INR':'symbol':'1.0'}}</div>
+            </div>
+            <div class="body_part">
+                <h4>Order Address</h4>
+                <h3>{{order.address}}</h3>
+                <h4>Items</h4>
+                <h3 *ngFor="let i of getJSON(order.item)">
+                   {{i.quantity}} x {{i.item.item_name}}
+                </h3>
+                <h4>Ordered On</h4>
+                <h3>{{order.created_date | date}}</h3>
+            </div>
+            <div class="footer_part">
+                <h3><i class="fas fa-redo"></i>Repeat Order</h3>
+            </div>
+        </div>
+       
+    </div>
+</div>

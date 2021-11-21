@@ -8,18 +8,39 @@
             <p class="sec-one-para">Lorem ipsum dolor sit amet, consetetur</p>
            
             <div class="form-input">
-                <span class="errotext" *ngIf="isvalid">{{errortext}}</span>
+                <!-- <span class="errotext" *ngIf="isvalid">{{errortext}}</span> -->
                  <form (ngSubmit)="Login()" class="pt-2"  [formGroup]="loginForm">
 
-                    <input type="text" name="username" formControlName="username" placeholder="Email/Mobile" id="user" class="form-control w-100">
-                    <input type="password" name="Password" formControlName="password" placeholder="Password" id="pwd" class="form-control w-100">
+                    <input *ngIf="!showOTP" type="text" name="username" formControlName="username" placeholder="Mobile" id="user" class="form-control w-100">
+                    <!-- <input type="password" name="Password" formControlName="password" placeholder="Password" id="pwd" class="form-control w-100"> -->
+                    <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched"
+                    class=" alert-danger">
+                    Please enter a valid mobile number
+                  </div>
+					<div id="divOuter" *ngIf="showOTP">
+                        <label *ngIf="showOTP">Enter OTP</label>
+						<div id="divInner">
+							<input type="text" formControlName="otp"   class="enter_otp" id="partitioned" maxlength="4">
+						</div>
+                        <p class="pt-2 text-danger" *ngIf="wrngO">OTP invalid</p>
+					</div>
                 </form>
             </div>
         </div>
         <div class="sec-two">
-            <div class="sec-two-button">
-                <button class="go" type="submit" (click)="Login()" form="form1" value="Submit">Go</button>
+            <div class="sec-two-button" >
+                <button class="go" *ngIf="!showOTP" type="submit" (click)="Login()" form="form1" value="Submit">Go</button>
             </div>
-            <p class="sec-two-fgt" [routerLink]="['/forget']" routerLinkActive="router-link-active" >Forgot Password?</p>
+            <p class="sec-two-fgt"  ></p>
+        </div>
+    </div>
+    <div id="failedModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p style="text-align: center;"><img src="../../assets/rtick.jpg" style="width: 25%;" /></p>
+                    <p style="text-align: center;font-size: 16px;font-weight: 600;">{{errortext}}</p>
+                </div>
+            </div>
         </div>
     </div>

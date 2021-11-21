@@ -16,6 +16,12 @@ import { CartComponent } from './cart/cart.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DescriptionComponent } from './description/description.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { SettingsComponent } from './settings/settings.component';
+
+import { OrdertrackComponent } from './ordertrack/ordertrack.component';
+import { MyordersComponent } from './myorders/myorders.component';
+import { SupportComponent } from './support/support.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,13 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CartComponent,
     ProfileComponent,
     DescriptionComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    SettingsComponent,
+   
+    OrdertrackComponent,
+    MyordersComponent,
+    SupportComponent,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,

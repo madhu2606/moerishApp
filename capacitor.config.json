@@ -1,9 +1,12 @@
 {
   "appId": "com.moerish.app",
-  "appName": "Moerish",
+  "appName": "Moreishk",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "dist\\MoerishApp",
+  "android": {
+    "allowMixedContent": true
+  },
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0

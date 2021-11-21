@@ -2,8 +2,8 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.moerish.app',
-  appName: 'Moerish',ist\\M
-  webDir: 'doerishApp',
+  appName: 'Moreishk',
+  webDir: 'MoerishApp',
   bundledWebRuntime: false
 };
 

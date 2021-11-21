@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Moerish</string>
-    <string name="title_activity_main">Moerish</string>
+    <string name="app_name">Moreishk</string>
+    <string name="title_activity_main">Moreishk</string>
     <string name="package_name">com.moerish.app</string>
     <string name="custom_url_scheme">com.moerish.app</string>
 </resources>

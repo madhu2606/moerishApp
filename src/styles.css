@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+
 @import "../node_modules/font-awesome/css/font-awesome.css";
 @font-face {
 	font-family: 'rubikregular';
@@ -9,7 +10,7 @@
 	font-style: normal;
 }
 html, body {
-	font-family: 'rubikregular';
+	font-family: 'rubikregular' !important;
 	max-width: 100%;
 	overflow-x: hidden;
 }

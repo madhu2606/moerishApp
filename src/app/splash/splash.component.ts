@@ -13,7 +13,7 @@ export class SplashComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.login.isLoggedIn()){
-      // this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard']);
     }else{
       console.log('not logged in')
     }

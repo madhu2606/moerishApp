@@ -1,0 +1,29 @@
+<div class="main-element">
+    <div class="sec_header">
+        <div class="main_header">
+            <h3 class="main-head"><i (click)="back()" class="fas fa-chevron-left back_arrow"></i>&nbsp;Settings</h3>
+            <div class="profile">
+                <div class="logo">
+                    <img src="../../assets/boy.png" alt="profile" width="100%">
+                </div>
+                <div class="name_details">
+                    <p>Hello</p>
+                    <h3>{{userDetails.name}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+		<div class="sec_two">
+			<ul class="view_list">
+				<a [routerLink]="['/profile']" routerLinkActive="router-link-active" ><li class="vlist">Profile</li></a>
+				<a [routerLink]="['/order']" routerLinkActive="router-link-active" ><li class="vlist">Orders</li></a>
+				<!-- <a href="#"><li class="vlist">Credits</li></a>
+				<a href="#"><li class="vlist">Refer & Earn</li></a> -->
+				<a [routerLink]="['/changepass']" routerLinkActive="router-link-active" ><li class="vlist">Change Password</li></a>
+				<a [routerLink]="['/support']" routerLinkActive="router-link-active" ><li class="vlist">Support</li></a>
+				<a href="#" (click)="Signout()" class="active_out"><li class="vlist">Sign Out</li></a>
+			</ul>
+		</div>
+</div>

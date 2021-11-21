@@ -106,9 +106,21 @@
 	    padding-bottom: 20px;
 	}
 }
-.carousel-indicators{
+/* .carousel-indicators{
 	bottom: unset;
+} */
+.carousel-indicators {
+    position: absolute;
+    bottom: -108px;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
 }
+
 .carousel-indicators li {
     width: 10px;
     height: 10px;

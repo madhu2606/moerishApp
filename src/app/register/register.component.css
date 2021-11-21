@@ -30,7 +30,7 @@
 	color: #8C8C8C;
 	font-size: 17px;
 	text-align: center;
-	margin: 0px 0px 8px 0px;
+	margin: 0px 0px 15px 0px;
 }
 .form-input {
 	height: 45%;
@@ -88,4 +88,13 @@
     p.sec-two-fgt {
         padding-bottom: 20px;
     }
+}
+.modal {
+    top: 30% !important;
+}
+.alert-danger {
+    color: white;
+    background: #C00037;
+    margin-bottom:10px;
+    padding:3px
 }

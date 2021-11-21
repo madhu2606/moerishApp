@@ -62,16 +62,17 @@ export class ForgotpasswordComponent implements OnInit {
         "otp": parseInt(this.otp.value)
     }
     
-    this.login.updatePass(tmp,this.x_id).subscribe(res=>{
-      console.log(res)
-      if(res['success'] == true){
-        this.router.navigate(['/login']);
-      }else{
-        this.ErroMsg = res['error']['message']
-        this.isError = true
-      }
+    // this.login.updatePass(tmp,this.x_id).subscribe(res=>{
+    //   console.log(res)
+    //   if(res['success'] == true){
+    //     this.router.navigate(['/login']);
+    //   }else{
+    //     this.ErroMsg = res['error']['message']
+    //     this.isError = true
+    //   }
 
-    })
+    // }
+    // )
     }else{
       this.ErroMsg = "Please Enter all details"
       this.isError = true

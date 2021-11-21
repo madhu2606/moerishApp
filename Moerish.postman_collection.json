@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "e137a250-882a-42af-8cf5-86e1cf9fec9d",
+		"name": "Moerish",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addTocart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"madhu\",\r\n    \"password\":\"bWFkaHU=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"madhu\",\r\n    \"password\":\"bWFkaHU=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"madhu123\",\r\n    \"password\":\"bWFkaHUxMjM=\",\r\n    \"email\":\"madhu@gmail.com\",\r\n    \"mobile\":\"9989152039\",\r\n    \"name\":\"Madhu Babu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/login/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"login",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add-Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item_name\":\"Chicken Biryani\",\r\n    \"item_cost\":\"25\",\r\n    \"item_discount\":\"1\",\r\n    \"item_description\":\"\",\r\n    \"item_mob_smallimg\":\"iocn.png\",\r\n    \"item_mob_largeimg\":\"icon2.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/v1.0/items/add-item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"add-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item_id\":\"1\",\r\n    \"item_name\":\"Chicken Biryani\",\r\n    \"item_cost\":\"25\",\r\n    \"item_discount\":\"15\",\r\n    \"item_description\":\"\",\r\n    \"item_mob_smallimg\":\"iocn.png\",\r\n    \"item_mob_largeimg\":\"icon2.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/v1.0/items/update-item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"update-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item_id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/v1.0/items/delete-item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"delete-item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add-Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item_id\":\"2\",\r\n    \"rating\":2,\r\n    \"review\":\"Best food\",\r\n    \"review_name\":\"Madhu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/v1.0/items/add-item-review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"add-item-review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"item_id\":\"2\",\r\n    \"rating\":2,\r\n    \"review\":\"Best food new\",\r\n    \"review_name\":\"Madhu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/v1.0/items/update-item-review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"update-item-review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/v1.0/items/delete-item-review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"delete-item-review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add-Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category_name\":\"MainCourse\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/v1.0/items/add-category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"add-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update-category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"category_name\":\"New Main Course\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3010/v1.0/items/update-category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"update-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "get Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cat_id\":[2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://billing.volksphantom.com:3010/v1.0/items/get-category",
+					"protocol": "http",
+					"host": [
+						"billing",
+						"volksphantom",
+						"com"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"get-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cat_id\":[2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://billing.volksphantom.com:3010/v1.0/items/get-category",
+					"protocol": "http",
+					"host": [
+						"billing",
+						"volksphantom",
+						"com"
+					],
+					"port": "3010",
+					"path": [
+						"v1.0",
+						"items",
+						"get-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAddress",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "pincode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "saveAddress",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "getPin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "SMS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://locahost:3010"
+		}
+	]
+}

@@ -11,7 +11,14 @@
 			(ngSubmit)="Register()" method="post" id="form1">
 				<input type="text" name="username" formControlName="name" placeholder="Name" id="user" class="form-control">
 				<input type="email" name="email" formControlName="email" placeholder="Email" id="email" class="form-control">
-				<input type="text" name="phone" formControlName="mobile" placeholder="Phone" id="phone" class="form-control">
+				<div *ngIf="RegisterForm.controls['email'].invalid && RegisterForm.controls['email'].touched" class=" alert-danger">
+					Please enter a valid email
+				  </div>
+				<input type="number" name="phone" formControlName="mobile" placeholder="Phone" id="phone" class="form-control">
+				<div *ngIf="RegisterForm.controls['mobile'].invalid && RegisterForm.controls['mobile'].touched"
+				class=" alert-danger">
+				Please enter a valid mobile number
+			  </div>
 				<input type="password" name="Password" formControlName="password" placeholder="Password" id="pwd" class="form-control">
 			</form>
 		</div>
@@ -23,3 +30,25 @@
 		<p class="sec-two-fgt" [routerLink]="['/login']" routerLinkActive="router-link-active" >Existing user? Please Login</p>
 	</div>
 </div>
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<p style="text-align: center;"><img src="../../assets/gtick.png" style="width: 35%;" /></p>
+				<p style="text-align: center;font-size: 16px;font-weight: 600;">Registered Successfully</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="failedModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<p style="text-align: center;"><img src="../../assets/rtick.jpg" style="width: 25%;" /></p>
+				<p style="text-align: center;font-size: 16px;font-weight: 600;">Account Already Exists</p>
+			</div>
+		</div>
+	</div>
+</div>
+

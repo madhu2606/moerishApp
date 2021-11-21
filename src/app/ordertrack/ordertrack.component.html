@@ -1,0 +1,160 @@
+<div class="main-element">
+  <div class="sec_header">
+    <div class="main_header">
+      <h3 class="main-head">
+        <i
+          [routerLink]="['/cart']"
+          routerLinkActive="router-link-active"
+          class="fas fa-chevron-left back_arrow"
+        ></i
+        >Order Details
+      </h3>
+    </div>
+  </div>
+
+  <div class="sec_two">
+    <figure>
+      <img src="../../assets/track.svg" alt="track" />
+      <figcaption>
+        <h4>Tracking Details</h4>
+        <h6>Order Number</h6>
+        <h2>#{{ orderdet.order_no }}</h2>
+      </figcaption>
+    </figure>
+    <div class="order-track">
+      <div class="total_pr">
+        <figcaption>
+          <h2>₹ {{ orderdet.amount }}</h2>
+        </figcaption>
+      </div>
+      <div class="order-track-step">
+        <div class="order-track-status">
+          <span class="order-track-status-dot done"></span>
+          <span class="order-track-status-line done"></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat">Order Received</p>
+          <span class="order-track-text-sub">{{
+            orderdet.created_date | date
+          }}</span>
+        </div>
+      </div>
+      <div class="order-track-step">
+        <div class="order-track-status">
+          <span
+            class="order-track-status-dot"
+            [ngClass]="{ done: parseint(orderdet.status) >= 1 && parseint(orderdet.status) <= 5 }"
+          ></span>
+          <span
+            class="order-track-status-line"
+            [ngClass]="{ done: parseint(orderdet.status) >= 1 && parseint(orderdet.status) <= 5 }"
+          ></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat">Order Processed</p>
+          <span class="order-track-text-sub">{{
+            orderdet.created_date | date
+          }}</span>
+        </div>
+      </div>
+      <div class="order-track-step">
+        <div class="order-track-status">
+          <span
+            class="order-track-status-dot"
+            [ngClass]="{ done: parseint(orderdet.status) >= 2 && parseint(orderdet.status) <= 5 }"
+          ></span>
+          <span
+            class="order-track-status-line"
+            [ngClass]="{ done: parseint(orderdet.status) >= 2 && parseint(orderdet.status) <= 5 }"
+          ></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat">Order Dispatched</p>
+          <span class="order-track-text-sub">{{
+            orderdet.created_date | date
+          }}</span>
+        </div>
+      </div>
+      <div class="order-track-step">
+        <div class="order-track-status">
+          <span
+            class="order-track-status-dot"
+            [ngClass]="{ done: parseint(orderdet.status) >= 3 && parseint(orderdet.status) <= 5 }"
+          ></span>
+          <span
+            class="order-track-status-line"
+            [ngClass]="{ done: parseint(orderdet.status) >= 3 && parseint(orderdet.status) <= 5 }"
+          ></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat">Order Deliverd</p>
+          <span class="order-track-text-sub">{{
+            orderdet.created_date | date
+          }}</span>
+        </div>
+      </div>
+      <div class="order-track-step" *ngIf="parseint(orderdet.status) == -1">
+        <div class="order-track-status">
+          <span class="order-track-status-dot"></span>
+          <span class="order-track-status-line"></span>
+        </div>
+        <div class="order-track-text">
+          <p class="order-track-text-stat">Order Cancelled</p>
+          <span class="order-track-text-sub">{{
+            orderdet.created_date | date
+          }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="cancel text-center pt-5">
+      <button id="cancel" data-toggle="modal" data-target="#myModal">
+        Cancel Order
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Are you sure want to cancel order?
+        </h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <textarea
+            class="form-control"
+            [(ngModel)]="canceltext"
+            rows="5"
+            id="reason"
+            placeholder="Reason for cancellation..."
+          ></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-default"
+          data-dismiss="modal"
+          id="confirm"
+          (click)="cancel()"
+        >
+          Confirm
+        </button>
+
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

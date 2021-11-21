@@ -23,7 +23,8 @@ export class LoginService {
 
   Login(data){
     console.log(data);
-    data.password = btoa(data.password)
+    data.username = data.username.trim()
+    data.password = btoa(data.password.trim())
     return this.http.post(environment.url.login,data,{observe: 'response'}).map(
       res=>{
       console.log(res.body)
@@ -42,7 +43,8 @@ export class LoginService {
   }
 
   Register(data){
-    data.password = btoa(data.password)
+    data.email = data.email.trim()
+    data.password = btoa(data.password.trim())
     return this.http.post(environment.url.register,data,{observe: 'response'}).map(
       res=>{
       // console.log(res)
@@ -83,11 +85,16 @@ export class LoginService {
     let helper = new JwtHelperService();
     let token = localStorage.getItem('token');
     let decoded= helper.decodeToken(token);
-    if(helper.isTokenExpired(token)){
-      return false
+    if(token !=null){
+      if(helper.isTokenExpired(token)){
+        return false
+      }else{
+        return true
+      }
     }else{
-      return true
+      return false
     }
+   
   }
 
   UpdateProfile(data){
@@ -99,6 +106,9 @@ export class LoginService {
     });
   }
 
+  
+  
+
   checkuser(data){
     return this.http.post(environment.url.checkuser,data,{observe: 'response'}).map(
       res=>{
@@ -108,19 +118,9 @@ export class LoginService {
     });
 
   }
-  updatePass(data,id){
-    let headerDict = {
-     
-      'x_id':id
-     
-      
-  
-    }
-    
-    let  requestOptions = {                                                                                                                                                                                 
-      headers: new HttpHeaders(headerDict), 
-    };
-    return this.http.post(environment.url.updatePass,data,requestOptions).map(
+  updatePass(data){
+   
+    return this.http.post(environment.url.updatePass,data,this.requestOptions).map(
       res=>{
       console.log(res)
       return res

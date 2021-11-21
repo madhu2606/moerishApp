@@ -99,6 +99,7 @@ p.sort_by {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+    margin-bottom: unset;
 }
 p.sort_by i {
     font-size: 18px;
@@ -121,6 +122,24 @@ hr {
     }
     .item_img img {
         height: 108px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .sec_header, .sec_two, .sec_footer {
+        height: auto !important;
+    }
+    .footer-child img{
+        width: auto;
+    }
+    img.active_img {
+        width: auto !important;
+    }
+    .item_img img {
+        height: 108px;
+    }
+    .single_item {
+        margin: 15px 0px 23px 0px;
+        height: 120px;
     }
 }
 
@@ -176,4 +195,80 @@ button.cancel {
     background: none;
     color: #c00d36;
     font-weight: 600;
+}
+
+span.cart_counter {
+    background: #c00037;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 32px;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+span.search_tab {
+    float: right;
+}
+
+.sec_footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	height: 10vh;
+    padding: 10px 0px;
+    box-shadow: 0px 0px 16px rgb(0 147 233 / 12%);
+    background-color: #ffff;
+}
+.footer-child {
+    width: 32.3333%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+.footer-child img {
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+.footer-child p {
+    color: #969595;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.cart_moerish, .profile_moerish {
+    margin-top: 5px;
+}
+.cart_moerish img {
+    height: 24px;
+}
+.cart_moerish p {
+    font-size: 12px;
+}
+.active_moerish img {
+    height: 28px;
+}
+.active_moerish p {
+    font-size: 12px;
+}
+.profile_moerish img {
+    height: 24px;
+}
+.profile_moerish p {
+    font-size: 12px;
+}
+.router-link-active{
+    color: #c00037 !important;
+}
+
+.spin{
+    /* z-index: 999999; */
+    position: absolute;
+    top: 50%;
+  
+    left: 50%;
+   
+    margin: auto;
 }

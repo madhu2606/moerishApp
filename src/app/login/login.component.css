@@ -92,3 +92,37 @@
         padding-bottom: 20px;
     }
 }
+.modal {
+    top: 30% !important;
+}
+#divOuter {
+    width: 190px;
+    overflow: hidden;
+    margin: 0px auto;
+    text-align: center;
+}
+#divInner {
+    left: 0;
+    position: sticky;
+}
+#partitioned {
+    background-color: #ffffff;
+    padding-left: 15px;
+    letter-spacing: 42px;
+    border: 0;
+    background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 50px 1px;
+    background-repeat: repeat-x;
+    background-position-x: 35px;
+    width: 220px;
+    min-width: 220px;}
+
+input.enter_otp {
+    width: 100%;
+    border: none;
+    padding: 6px 0px;
+}
+input.enter_otp:focus{
+    outline: none;
+}

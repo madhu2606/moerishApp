@@ -13,9 +13,12 @@ declare var $: any;
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements AfterViewInit {
+export class LoginComponent implements AfterViewInit,OnInit {
   isvalid = false
   errortext= ''
+  otp
+  showOTP = false
+  wrngO = false
   
   public auth2: any;
   constructor(
@@ -24,6 +27,20 @@ export class LoginComponent implements AfterViewInit {
     private router: Router,
     private zone: NgZone
   ) { }
+
+  ngOnInit(){
+    this.loginForm.get('otp').valueChanges.subscribe(res=>{
+      console.log(res)
+      if(res == this.otp && this.otp !=null){
+        this.router.navigate(['/dashboard']);
+      }else {
+        if(res.length == 4){
+        this.wrngO = true;
+      }
+
+      }
+    })
+  }
 
   ngAfterViewInit() {
     $(document).ready(function(){
@@ -43,23 +60,36 @@ export class LoginComponent implements AfterViewInit {
   }
 
   loginForm = new FormGroup({
-    username: new FormControl('',Validators.required),
-    password: new FormControl('',Validators.required)
+    username:  new FormControl('', [
+      Validators.required,
+      Validators.pattern('[456789][0-9]{9}'),
+    ]),
+    password: new FormControl('',Validators.required),
+    otp:new FormControl('',Validators.required)
   });
 
 
   Login(){
+    this.showOTP = true
     console.log(this.loginForm.value)
     
      this.login.Login(this.loginForm.value).subscribe(
     res=>{
+      console.log('from login')
        console.log((res));
        if(res['status'] == 200){
-          this.router.navigate(['/dashboard']);
+         let det = this.login.getUserDetails();
+        this.otp = det['otp']
+      
+        // console.log(this.otp)
+          // this.router.navigate(['/dashboard']);
        }else{
-        this.isvalid = true
+        this.isvalid = true  
+        this.showOTP = false
+
         this.loginForm.reset();
         this.errortext = res['error']
+        $('#failedModal').modal('show')
        }
       
       },
@@ -72,6 +102,7 @@ export class LoginComponent implements AfterViewInit {
     }
      );
   }
- 
+
+  
 
 }
