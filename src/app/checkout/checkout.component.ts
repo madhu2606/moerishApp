@@ -133,7 +133,7 @@ alert('Please Enable location service');
 
   getAdress(){
    
-    this.addList = this.userDetails.address !='' ? JSON.parse(this.userDetails.address):[]
+    this.addList = this.userDetails.address !=null ? JSON.parse(this.userDetails.address):[]
     console.log(this.addList)
   }
 

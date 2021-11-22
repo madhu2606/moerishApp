@@ -3,9 +3,9 @@
     padding: 26px 15px 15px 15px;
 }
 .sec_two {
-	height: 90vh;
+	/* height: 90vh; */
 	padding: 0px 15px;
-}
+    margin-bottom: 1.5rem;}
 hr {
     margin: 0px;
 }
